@@ -45,6 +45,13 @@ export async function handler(event) {
   const kind = normalized(pick(body, ["webhook_event_type", "event", "event_type", "order_status", "status", "order.status"]));
   if (!email) return response(400, { error: "E-mail do comprador ausente." });
 
+  // A Kiwify usa endereços reservados/fictícios ao acionar "Testar Webhook".
+  // Confirmamos o recebimento, mas não tentamos criar um usuário ou enviar convite.
+  const domain = email.split("@")[1] || "";
+  if (["example.com", "example.org", "example.net"].includes(domain)) {
+    return response(200, { ok: true, action: "test_received" });
+  }
+
   const grant = ["order_approved", "purchase_approved", "compra_aprovada", "venda_aprovada", "approved", "paid", "subscription_renewed", "assinatura_renovada"].some((x) => kind.includes(x));
   const revoke = ["refund", "refunded", "reembolso", "chargeback", "subscription_canceled", "subscription_cancelled", "assinatura_cancelada"].some((x) => kind.includes(x));
   if (!grant && !revoke) return response(202, { ignored: "evento", event: kind });
