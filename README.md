@@ -1,14 +1,16 @@
-# RAEM · versão final local-first
+# RAEM · versão 7 local-first
 
 PWA modular, sem dependências externas. Sirva a pasta por HTTPS (ou localhost); abrir `index.html` diretamente não ativa o service worker.
 
+Esta versão inclui o texto integral da edição revisada do ebook, organizado em 22 seções, além do PDF completo para leitura ou download. Para publicar pelo GitHub no Netlify, coloque o conteúdo desta pasta na raiz do repositório, deixe o comando de build vazio e use `.` como diretório de publicação.
+
 ## Estrutura
 
-- `js/content.js`: conteúdo editorial independente da interface.
+- `js/content.js`: conteúdo editorial integral e independente da interface.
 - `js/storage.js`: esquema de dados, datas locais, backup e restauração.
 - `js/app.js`: navegação e componentes da aplicação.
 - `css/app.css`: sistema visual responsivo e acessível.
-- `sw.js`: cache do shell. Áudios são carregados sob demanda e não bloqueiam a instalação.
+- `sw.js`: cache do shell e do leitor integral. PDF e áudios são armazenados após o primeiro acesso e não bloqueiam a instalação.
 
 ## Escopo comercial
 

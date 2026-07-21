@@ -1,3 +1,13 @@
+# Versão 7 · ebook integral · 2026-07-21
+
+- Substituição dos resumos pelo texto editorial integral da edição revisada.
+- Carta ao leitor, introdução, oito capítulos, oito bônus, workbook, referências e expediente acessíveis no leitor.
+- Navegação paginada para leitura longa, ajuste de tamanho do texto e progresso por capítulo.
+- PDF integral disponível para abrir e baixar.
+- Botão de instalação exibido quando o navegador disponibiliza a instalação do PWA.
+- Instruções específicas para instalação no iPhone e fallback pelo menu do navegador.
+- Cache offline atualizado para incluir todo o leitor integral; PDF e áudios são armazenados após o primeiro acesso.
+
 # Versão final · 2026-07-21
 
 - Conteúdo editorial reescrito integralmente segundo a linguagem RAEM.
